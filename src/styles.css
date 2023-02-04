@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'Inter';
+        src: url('./assets/Inter-VariableFont.ttf') format('truetype');
+        font-display: swap;
+    }
+}

@@ -1,0 +1,18 @@
+---
+title: Nick Coffey
+description: Nick Coffey is a fullstack developer. His blog features content focusing on all things software.
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="{{ description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>{{ title }}</title>
+  </head>
+  <body class='font-sans m-4 bg-white dark:bg-slate-900 dark:text-white'>
+    {{ content | safe }}
+  </body>
+</html>
