@@ -1,10 +1,10 @@
 ---
 title: CMS Test
 description: This is a Test Post
-heroImage: /public/gold-bar.png
+heroImage: /gold-bar.png
 pubDate: 2023-02-08T04:28:22.624Z
 ---
-# T﻿his is a test body.
+# This is a test body.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras neque odio, pulvinar vitae elit quis, aliquam elementum odio. Cras convallis, orci vitae laoreet cursus, felis sapien pretium sem, eget tempor purus erat a elit. Aenean sit amet tellus sed leo commodo luctus. In id maximus diam. Vestibulum sodales tortor nulla. Suspendisse potenti. Nullam eu risus eget risus auctor venenatis et eu ex. Pellentesque eu odio gravida, vestibulum lacus at, lacinia nibh. Praesent et facilisis massa. Nulla bibendum justo quis diam fringilla porta a vel quam. Aliquam ut enim et ex dignissim ullamcorper sed a lorem.
 
 **Sed vel tincidunt orci. Aliquam condimentum neque turpis, ac porta justo maximus at. In convallis lobortis imperdiet. Sed non maximus lectus. In venenatis odio et nisl cursus pharetra. Aliquam a augue vel velit elementum tincidunt nec at felis. Suspendisse eu feugiat tellus.**
