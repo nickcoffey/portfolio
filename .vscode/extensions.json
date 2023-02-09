@@ -4,6 +4,7 @@
     "github.github-vscode-theme",
     "esbenp.prettier-vscode",
     "bradlc.vscode-tailwindcss",
-    "heybourn.headwind"
+    "heybourn.headwind",
+    "astro-build.astro-vscode"
   ]
 }
