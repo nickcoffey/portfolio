@@ -11,9 +11,14 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, '');
 	<slot />
 </a>
 <style>
+	a {
+		text-decoration: none;
+	}
 	a.active {
-		@apply font-bold;
-		@apply underline;
-		@apply underline-offset-4;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	a:visited {
+		color: black;
 	}
 </style>
