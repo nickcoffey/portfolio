@@ -2,25 +2,47 @@
 import type { CollectionEntry } from 'astro:content'
 import BaseLayout from './BaseLayout.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+import '../styles/blog-post.css'
+import { log } from 'astro/dist/core/logger/core'
 
 type Props = CollectionEntry<'blog'>['data']
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props
+
+const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+]
+
+function getFormattedDate(date: Date) {
+  return `${months[date.getMonth() + 1]} ${date.getDate()}, ${date.getFullYear()}`
+}
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main>
     <article>
-      {heroImage && <img width={720} height={360} src={heroImage} alt='' />}
+      {heroImage && <img src={heroImage} alt='' />}
       <h1>{title}</h1>
-      {pubDate && <time>{pubDate}</time>}
+      {pubDate && <time>{getFormattedDate(pubDate)}</time>}
       {
         updatedDate && (
           <div>
-            Last updated on <time>{updatedDate}</time>
+            Last updated on <time>{getFormattedDate(updatedDate)}</time>
           </div>
         )
       }
+      <h4>{description}</h4>
       <hr />
       <slot />
     </article>
