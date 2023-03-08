@@ -4,7 +4,15 @@
   box-sizing: border-box;
 }
 
+* {
+  margin: 0px;
+}
+
+html {
+  --primary-color: #3aaed8;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
-  margin: 8px;
+  font-family: 'Nunito', sans-serif;
+  margin: 24px;
 }

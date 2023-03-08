@@ -2,24 +2,37 @@
 import HeaderLink from './HeaderLink.astro'
 ---
 
-<header>
-  <h2 class="title">Nick Coffey</h2>
-  <nav>
+<header class="header">
+  <img src='/profile.jpg' alt='Profile picture' class="profile" />
+  <h2 class='title'>Nick Coffey</h2>
+  <nav class="navbar">
     <HeaderLink href='/'>Home</HeaderLink>
     <HeaderLink href='/about'>About</HeaderLink>
     <HeaderLink href='/blog'>Blog</HeaderLink>
-    <HeaderLink href='https://github.com/withastro/astro' target='_blank'>GitHub</HeaderLink>
   </nav>
 </header>
 
 <style>
-  .title {
-	text-align: center;
-	margin-bottom: 8px;
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
   }
 
-  nav {
-	display: flex;
-	justify-content: space-between;
+  .profile {
+    border-radius: 100%;
+    width: 30%;
+    margin: auto;
+    display: block;
+  }
+  .title {
+    text-align: center;
+    font-size: 174%;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-evenly;
   }
 </style>

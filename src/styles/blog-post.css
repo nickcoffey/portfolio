@@ -1,35 +1,39 @@
-h1 {
+.blog * {
+  margin: revert;
+}
+
+.blog h1 {
   font-size: xx-large;
 }
 
-img {
+.blog img {
   width: 100%;
 }
 
-blockquote {
+.blog blockquote {
   margin: 8px;
   padding: 4px;
   background-color: lightgrey;
 }
 
-table {
+.blog table {
   width: 100%;
   border: 1px solid black;
   border-collapse: collapse;
 }
 
-thead {
+.blog thead {
   border-bottom: 1px solid black;
   background-color: lightgrey;
 }
 
-td,
-th {
+.blog td,
+.blog th {
   text-align: start;
   border-right: 1px solid black;
 }
 
-td:last-of-type,
-th:last-of-type {
+.blog td:last-of-type,
+.blog th:last-of-type {
   border: none;
 }

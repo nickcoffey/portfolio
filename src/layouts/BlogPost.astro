@@ -3,36 +3,24 @@ import type { CollectionEntry } from 'astro:content'
 import BaseLayout from './BaseLayout.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 import '../styles/blog-post.css'
-import { log } from 'astro/dist/core/logger/core'
 
 type Props = CollectionEntry<'blog'>['data']
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 
-const months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December'
-]
-
 function getFormattedDate(date: Date) {
-  return `${months[date.getMonth() + 1]} ${date.getDate()}, ${date.getFullYear()}`
+  return date.toLocaleDateString('en-us', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
 }
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main>
     <article>
-      {heroImage && <img src={heroImage} alt='' />}
+      {heroImage && <img src={heroImage} class='hero-image' />}
       <h1>{title}</h1>
       {pubDate && <time>{getFormattedDate(pubDate)}</time>}
       {
@@ -44,7 +32,15 @@ function getFormattedDate(date: Date) {
       }
       <h4>{description}</h4>
       <hr />
-      <slot />
+      <div class='blog'>
+        <slot />
+      </div>
     </article>
   </main>
 </BaseLayout>
+
+<style>
+  .hero-image {
+    width: 100%;
+  }
+</style>
