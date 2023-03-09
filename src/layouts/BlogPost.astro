@@ -6,7 +6,7 @@ import '../styles/blog-post.css'
 
 type Props = CollectionEntry<'blog'>['data']
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props
+const { title, description, pubDate, heroImage } = Astro.props
 
 function getFormattedDate(date: Date) {
   return date.toLocaleDateString('en-us', {
@@ -20,18 +20,22 @@ function getFormattedDate(date: Date) {
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main>
     <article>
-      {heroImage && <img src={heroImage} class='hero-image' />}
-      <h1>{title}</h1>
-      {pubDate && <time>{getFormattedDate(pubDate)}</time>}
-      {
+      <div class='blog-header'>
+        {heroImage && <img src={heroImage} class='hero-image' />}
+        <div>
+          <h1>{title}</h1>
+          {pubDate && <time class='date'>{getFormattedDate(pubDate)}</time>}
+          <!-- {
         updatedDate && (
           <div>
             Last updated on <time>{getFormattedDate(updatedDate)}</time>
           </div>
         )
-      }
-      <h4>{description}</h4>
-      <hr />
+      } -->
+        </div>
+        <strong class="description">{description}</strong>
+        <hr />
+      </div>
       <div class='blog'>
         <slot />
       </div>
@@ -40,7 +44,18 @@ function getFormattedDate(date: Date) {
 </BaseLayout>
 
 <style>
+  .blog-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 16px;
+  }
+
   .hero-image {
     width: 100%;
+  }
+
+  .date {
+    color: var(--light-text-color);
   }
 </style>
