@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+---
+
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <main>
+    <h2>About Me</h2>
+    <section class='container'>
+      <p>
+        Hi, my name is Nick Coffey and I'm a fullstack developer at Slalom. I've been working as a web developer
+        professionally since 2017 and love the constant learning and innovation that comes with building on the web.
+      </p>
+      <p>
+        This blog is where I like to share new ideas, technologies, and discoveries I come across in my personal and
+        professional projects.
+      </p>
+    </section>
+    <h2>Contact</h2>
+    <section class='container'>
+      <ul class='contact-list'>
+        <li><a href='https://github.com/nickcoffey' class='link'>GitHub</a></li>
+        <li><a href='https://www.linkedin.com/in/nicholasjcoffey' class='link'>LinkedIn</a></li>
+        <li><a href='mailto:nicholasjcoffey@gmail.com' class='link'>nicholasjcoffey@gmail.com</a></li>
+      </ul>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 32px;
+  }
+
+  .contact-list {
+    list-style: none;
+    padding-left: 0px;
+  }
+
+  .contact-list li::before {
+    content: '•';
+    color: var(--light-text-color);
+    padding-right: 8px;
+  }
+
+  .link {
+    text-decoration: none;
+    color: var(--primary-color-dark);
+  }
+</style>
