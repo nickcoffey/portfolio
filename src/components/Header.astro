@@ -2,13 +2,16 @@
 import HeaderLink from './HeaderLink.astro'
 ---
 
-<header class="header">
-  <img src='/profile.jpg' alt='Profile picture' class="profile" />
-  <h2 class='title'>Nick Coffey</h2>
-  <nav class="navbar">
-    <HeaderLink href='/'>Home</HeaderLink>
+<header class='header'>
+  <img src='/profile.jpg' alt='Profile picture' class='profile' />
+  <div class='title-container'>
+    <h2 class='title'>Nick Coffey</h2>
+    <p class='sub-title'>Fullstack Developer</p>
+  </div>
+  <nav class='navbar'>
+    <HeaderLink href='/'>Posts</HeaderLink>
+    <HeaderLink href='/projects'>Projects</HeaderLink>
     <HeaderLink href='/about'>About</HeaderLink>
-    <HeaderLink href='/blog'>Blog</HeaderLink>
   </nav>
 </header>
 
@@ -16,8 +19,8 @@ import HeaderLink from './HeaderLink.astro'
   .header {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-bottom: 16px;
+    gap: 16px;
+    margin-bottom: 32px;
   }
 
   .profile {
@@ -26,9 +29,17 @@ import HeaderLink from './HeaderLink.astro'
     margin: auto;
     display: block;
   }
-  .title {
+
+  .title-container {
     text-align: center;
-    font-size: 174%;
+  }
+
+  .title {
+    font-size: 175%;
+  }
+
+  .sub-title {
+    color: var(--light-text-color);
   }
 
   .navbar {
