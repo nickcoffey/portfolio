@@ -1,7 +1,7 @@
 ---
 title: "First post"
 description: "Lorem ipsum dolor sit amet"
-pubDate: "2022-07-08T00:00:00.000Z"
+pubDate: "2022-07-08T06:00:00.000Z"
 heroImage: "/placeholder-hero.jpg"
 ---
 
