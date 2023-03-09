@@ -10,6 +10,8 @@
 
 html {
   --primary-color: #3aaed8;
+  --primary-color-dark: #2a86a8;
+  --light-text-color: #898787;
 }
 
 body {
