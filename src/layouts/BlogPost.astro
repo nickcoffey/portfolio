@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 import BaseLayout from './BaseLayout.astro'
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 import '../styles/blog-post.css'
 
 type Props = CollectionEntry<'blog'>['data']
@@ -17,7 +16,7 @@ function getFormattedDate(date: Date) {
 }
 ---
 
-<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<BaseLayout title={title} description={description}>
   <main>
     <article>
       <div class='blog-header'>

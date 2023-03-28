@@ -9,7 +9,7 @@ import '@fontsource/nunito'
 import Header from '../components/Header.astro'
 import '../styles/global.css'
 
-const { title, description, image = '/placeholder-social.jpg' } = Astro.props
+const { title, description, image = '/profile.jpg' } = Astro.props
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---
@@ -20,7 +20,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
     <!-- Global Metadata -->
     <meta charset='utf-8' />
     <meta name='viewport' content='width=device-width,initial-scale=1' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel='icon' href='/favicon.ico' />
     <meta name='generator' content={Astro.generator} />
 
     <!-- Canonical URL -->
