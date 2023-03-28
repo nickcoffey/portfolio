@@ -3,24 +3,33 @@ import HeaderLink from './HeaderLink.astro'
 ---
 
 <header class='header'>
-  <img src='/profile.jpg' alt='Profile picture' class='profile' />
-  <div class='title-container'>
-    <h2 class='title'>Nick Coffey</h2>
-    <p class='sub-title'>Fullstack Developer</p>
+  <div class='wrapper'>
+    <img src='/profile.jpg' alt='Profile picture' class='profile' />
+    <div class='title-container'>
+      <h2 class='title'>Nick Coffey</h2>
+      <p class='sub-title'>Fullstack Developer</p>
+    </div>
+    <nav class='navbar'>
+      <HeaderLink href='/'>Posts</HeaderLink>
+      <HeaderLink href='/projects'>Projects</HeaderLink>
+      <HeaderLink href='/about'>About</HeaderLink>
+    </nav>
   </div>
-  <nav class='navbar'>
-    <HeaderLink href='/'>Posts</HeaderLink>
-    <HeaderLink href='/projects'>Projects</HeaderLink>
-    <HeaderLink href='/about'>About</HeaderLink>
-  </nav>
 </header>
 
 <style>
   .header {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    align-items: center;
     margin-bottom: 32px;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    gap: 16px;
   }
 
   .profile {

@@ -18,3 +18,15 @@ body {
   font-family: 'Nunito', sans-serif;
   margin: 24px;
 }
+
+
+@media (min-width: 768px) {
+  body {
+    margin: 24px 128px;
+  }
+}
+@media (min-width: 1280px) {
+  body {
+    margin: 24px 256px;
+  }
+}
