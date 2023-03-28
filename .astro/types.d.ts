@@ -109,13 +109,6 @@ declare module 'astro:content' {
   collection: "blog",
   data: InferEntrySchema<"blog">
 },
-"using-mdx.mdx": {
-  id: "using-mdx.mdx",
-  slug: "using-mdx",
-  body: string,
-  collection: "blog",
-  data: InferEntrySchema<"blog">
-},
 },
 
 	};
