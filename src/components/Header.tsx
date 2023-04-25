@@ -18,9 +18,9 @@ export function Header() {
   const toggleIsDark = () => setIsDark(!isDark)
 
   return (
-    <header className='flex items-center justify-between'>
-      <Image src={profilePic} alt='Profile' className='rounded-full h-10 w-10' />
-      <button onClick={toggleIsDark} className='px-3 py-2 bg-white dark:bg-slate-600 shadow-xl rounded-full'>
+    <header className='flex items-center justify-between h-10 mb-12'>
+      <Image src={profilePic} alt='Profile' className='rounded-full h-full w-10' />
+      <button onClick={toggleIsDark} className='h-full px-4 bg-white dark:bg-slate-600 shadow-xl rounded-full'>
         {isDark ? <FaRegSun className='text-xl' /> : <FaRegMoon className='text-xl' />}
       </button>
     </header>
