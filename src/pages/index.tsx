@@ -13,8 +13,8 @@ export default function Home() {
           discoveries I come across in my personal and professional projects.
         </p>
         <ul className='flex flex-col gap-4 text-sm'>
-          {CONTACTS.map(({ link, text, Icon }) => (
-            <li className='flex items-center gap-4'>
+          {CONTACTS.map(({ link, text, Icon }, index) => (
+            <li className='flex items-center gap-4' key={index}>
               <Icon className='text-lg text-gray-400' />
               <a href={link}>{text}</a>
             </li>
