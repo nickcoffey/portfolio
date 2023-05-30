@@ -1,7 +1,15 @@
 import { FaLinkedinIn, FaGithub, FaRegEnvelope } from 'react-icons/fa'
 import type { IconType } from 'react-icons'
 
-export const ROUTES = ['Posts', 'Projects', 'About']
+type Route = {
+  link: string
+  name: string
+}
+export const ROUTES: Route[] = [
+  { name: 'Posts', link: '/posts' },
+  { name: 'Projects', link: '/projects' },
+  { name: 'About', link: '/' }
+]
 
 type Contact = {
   text: string
