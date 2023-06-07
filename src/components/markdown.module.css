@@ -42,7 +42,7 @@
 }
 
 .container pre {
-    @apply bg-gray-100 p-4 my-4;
+    @apply bg-gray-100 p-4 my-4 overflow-x-auto;
 }
 
 .container pre code {
