@@ -1,5 +1,6 @@
 import { supabase } from '@/supabase/utils'
 import { getFormattedDate } from '@/utils'
+import { Markdown } from '@/components'
 import type { InferGetStaticPropsType, GetStaticProps, GetStaticPaths } from 'next'
 import type { Post } from '@/supabase/utils'
 
@@ -36,7 +37,7 @@ export default function Post({ post }: InferGetStaticPropsType<typeof getStaticP
         <p className='text-gray-400'>{post?.description}</p>
       </div>
       <hr />
-      <p>{post?.body}</p>
+      {post && <Markdown content={post.body} />}
     </main>
   )
 }
