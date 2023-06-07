@@ -16,7 +16,14 @@ export function Header() {
       <Link href='/'>
         <Image src={profilePic} alt='Profile' className='rounded-full h-full w-10' />
       </Link>
-      {!showMobileNavigation && <FaBars className='text-2xl' onClick={openModal} />}
+      <nav className='gap-8 hidden lg:flex'>
+        {ROUTES.map(({ link, name }, index) => (
+          <Link href={link} key={index}>
+            {name}
+          </Link>
+        ))}
+      </nav>
+      {!showMobileNavigation && <FaBars className='text-2xl lg:hidden' onClick={openModal} />}
       {showMobileNavigation && (
         <nav
           className='flex flex-col gap-10 items-center justify-center bg-black opacity-90 text-white fixed top-0 left-0 z-50 h-full w-full'
