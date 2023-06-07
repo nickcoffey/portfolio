@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { supabase } from '@/supabase/utils'
 import type { InferGetStaticPropsType, GetStaticProps } from 'next'
 import type { Post } from '@/supabase/utils'
@@ -17,7 +18,9 @@ export default function Posts({ posts }: InferGetStaticPropsType<typeof getStati
       <h1>Posts</h1>
       <ul>
         {posts?.map(({ id, title }) => (
-          <li key={id}>{title}</li>
+          <li key={id}>
+            <Link href={`/posts/${id}`}>{title}</Link>
+          </li>
         ))}
       </ul>
     </main>
