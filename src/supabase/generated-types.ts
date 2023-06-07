@@ -13,18 +13,21 @@ export interface Database {
         Row: {
           body: string
           created_at: string
+          description: string
           id: number
           title: string
         }
         Insert: {
           body: string
           created_at?: string
+          description: string
           id?: number
           title: string
         }
         Update: {
           body?: string
           created_at?: string
+          description?: string
           id?: number
           title?: string
         }

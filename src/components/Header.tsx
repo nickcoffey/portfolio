@@ -13,7 +13,9 @@ export function Header() {
 
   return (
     <header className='flex items-center justify-between h-10 mb-12'>
-      <Image src={profilePic} alt='Profile' className='rounded-full h-full w-10' />
+      <Link href='/'>
+        <Image src={profilePic} alt='Profile' className='rounded-full h-full w-10' />
+      </Link>
       {!showMobileNavigation && <FaBars className='text-2xl' onClick={openModal} />}
       {showMobileNavigation && (
         <nav
