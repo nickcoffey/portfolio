@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { supabase } from '@/supabase/utils'
+import { getFormattedDate } from '@/utils'
 import type { InferGetStaticPropsType, GetStaticProps } from 'next'
 import type { Post } from '@/supabase/utils'
 
@@ -19,12 +20,11 @@ export default function Posts({ posts }: InferGetStaticPropsType<typeof getStati
       {posts?.map(({ id, title, created_at, description }) => (
         <section key={id}>
           <Link href={`/posts/${id}`}>
-            <div className='flex items-center gap-2 mb-4'>
+            <div className='flex flex-col gap-2'>
               <h2 className='font-bold text-2xl'>{title}</h2>
-              <p className='text-gray-400'>-</p>
-              <p className='text-gray-400'>{new Date(created_at).toLocaleDateString()}</p>
+              <p className='text-gray-400'>{getFormattedDate(created_at)}</p>
+              <p className='text-gray-400'>{description}</p>
             </div>
-            <p className='text-gray-400'>{description}</p>
           </Link>
         </section>
       ))}

@@ -1,4 +1,5 @@
 import { supabase } from '@/supabase/utils'
+import { getFormattedDate } from '@/utils'
 import type { InferGetStaticPropsType, GetStaticProps, GetStaticPaths } from 'next'
 import type { Post } from '@/supabase/utils'
 
@@ -28,10 +29,14 @@ export const getStaticProps: GetStaticProps<PostProps, PostParams> = async conte
 
 export default function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <main>
-      <h1>{post?.title}</h1>
-      {/* @ts-ignore */}
-      {post && Object.keys(post).map((key) => (<div>{key}: {post[key]}</div>))}
+    <main className='flex flex-col gap-6'>
+      <div className='flex flex-col gap-2'>
+        <h1 className='font-bold text-4xl'>{post?.title}</h1>
+        <p className='text-gray-400'>{post && getFormattedDate(post.created_at)}</p>
+        <p className='text-gray-400'>{post?.description}</p>
+      </div>
+      <hr />
+      <p>{post?.body}</p>
     </main>
   )
 }
