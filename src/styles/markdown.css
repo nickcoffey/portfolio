@@ -1,58 +1,55 @@
-.container {
-}
-
-.container h1 {
+#md-container h1 {
     @apply text-3xl font-bold my-6 pb-4 border-b border-gray-200;
 }
 
-.container h2 {
+#md-container h2 {
     @apply text-2xl font-bold my-4 pb-2 border-b border-gray-200;
 }
 
-.container h3 {
+#md-container h3 {
     @apply text-xl font-bold my-4;
 }
 
-.container hr {
+#md-container hr {
     @apply my-6 border-2;
 }
 
-.container p {
+#md-container p {
     @apply my-4;
 }
 
-.container blockquote {
+#md-container blockquote {
     @apply text-gray-600 bg-gray-100 border-l-8 border-gray-600 p-2 my-4;
 }
 
-.container blockquote pre {
+#md-container blockquote pre {
     @apply text-gray-800 bg-gray-200;
 }
 
-.container ul {
-  @apply list-disc list-outside pl-8 my-4;
+#md-container ul {
+    @apply list-disc list-outside pl-8 my-4;
 }
 
-.container ul ul {
+#md-container ul ul {
     @apply m-0;
 }
 
-.container ol {
+#md-container ol {
     @apply list-decimal list-outside marker:font-bold pl-8 my-4;
 }
 
-.container pre {
+#md-container pre {
     @apply bg-gray-100 p-4 my-4 overflow-x-auto;
 }
 
-.container pre code {
+#md-container pre code {
     @apply p-0 m-0 bg-inherit;
 }
 
-.container code {
+#md-container code {
     @apply bg-gray-100 py-0.5 px-2;
 }
 
-.container a {
+#md-container a {
     @apply text-blue-500;
 }

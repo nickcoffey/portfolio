@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useRemark } from 'react-remark'
 import rehypeSlug from 'rehype-slug'
-import styles from './markdown.module.css'
+import rehypePrism from '@mapbox/rehype-prism'
 
 type MarkdownProps = {
   content: string
@@ -10,7 +10,7 @@ type MarkdownProps = {
 export function Markdown({ content }: MarkdownProps) {
   const [markdown, setMarkdown] = useRemark({
     // @ts-ignore
-    rehypePlugins: [rehypeSlug]
+    rehypePlugins: [rehypeSlug, rehypePrism]
   })
 
   useEffect(() => {
@@ -18,9 +18,5 @@ export function Markdown({ content }: MarkdownProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  return (
-    <div className={styles.container}>
-      {markdown}
-    </div>
-  )
+  return <div id='md-container'>{markdown}</div>
 }
