@@ -30,13 +30,12 @@ export const getStaticProps: GetStaticProps<PostProps, PostParams> = async conte
 
 export default function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <main className='flex flex-col gap-6'>
+    <main className='flex flex-col gap-12'>
       <div className='flex flex-col gap-2'>
         <h1 className='font-bold text-4xl'>{post?.title}</h1>
         <p className='text-gray-400'>{post && getFormattedDate(post.created_at)}</p>
         <p className='text-gray-400'>{post?.description}</p>
       </div>
-      <hr />
       {post && <Markdown content={post.body} />}
     </main>
   )

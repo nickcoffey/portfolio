@@ -6,9 +6,9 @@ type Route = {
   name: string
 }
 export const ROUTES: Route[] = [
+  { name: 'About', link: '/' },
   { name: 'Posts', link: '/posts' },
   { name: 'Projects', link: '/projects' },
-  { name: 'About', link: '/' }
 ]
 
 type Contact = {

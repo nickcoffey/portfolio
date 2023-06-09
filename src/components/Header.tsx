@@ -25,7 +25,7 @@ export function Header() {
           className='flex flex-col gap-10 items-center justify-center bg-black opacity-90 dark:opacity-95 text-white fixed top-0 left-0 z-50 h-full w-full'
           onClick={closeModal}
         >
-          <FaTimes className='fixed top-6 right-3 text-2xl' />
+          <FaTimes className='fixed top-6 right-3 sm:right-12 text-2xl' />
           {ROUTES.map(({ link, name }, index) => (
             <Link href={link} key={index} className='text-2xl font-bold'>
               {name}

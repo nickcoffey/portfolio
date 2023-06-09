@@ -1,9 +1,9 @@
 #md-container h1 {
-    @apply text-3xl font-bold my-6 pb-4 border-b border-gray-200;
+    @apply text-3xl font-bold my-6;
 }
 
 #md-container h2 {
-    @apply text-2xl font-bold my-4 pb-2 border-b border-gray-200;
+    @apply text-2xl font-bold my-4;
 }
 
 #md-container h3 {
@@ -11,7 +11,7 @@
 }
 
 #md-container hr {
-    @apply my-6 border-2;
+    @apply my-6 border-gray-400;
 }
 
 #md-container p {
