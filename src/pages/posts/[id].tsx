@@ -1,5 +1,6 @@
+import Head from 'next/head'
 import { supabase } from '@/supabase/utils'
-import { getFormattedDate } from '@/utils'
+import { getFormattedDate, getPageTitle } from '@/utils'
 import { Markdown } from '@/components'
 import type { InferGetStaticPropsType, GetStaticProps, GetStaticPaths } from 'next'
 import type { Post } from '@/supabase/utils'
@@ -30,13 +31,18 @@ export const getStaticProps: GetStaticProps<PostProps, PostParams> = async conte
 
 export default function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <main className='flex flex-col gap-12'>
-      <div className='flex flex-col gap-2'>
-        <h1 className='font-bold text-4xl'>{post?.title}</h1>
-        <p className='text-gray-400'>{post && getFormattedDate(post.created_at)}</p>
-        <p className='text-gray-400'>{post?.description}</p>
-      </div>
-      {post && <Markdown content={post.body} />}
-    </main>
+    <>
+      <Head>
+        <title>{getPageTitle(post?.title)}</title>
+      </Head>
+      <main className='flex flex-col gap-12'>
+        <div className='flex flex-col gap-2'>
+          <h1 className='font-bold text-4xl'>{post?.title}</h1>
+          <p className='text-gray-400'>{post && getFormattedDate(post.created_at)}</p>
+          <p className='text-gray-400'>{post?.description}</p>
+        </div>
+        {post && <Markdown content={post.body} />}
+      </main>
+    </>
   )
 }
