@@ -3,7 +3,7 @@ export type Json =
   | number
   | boolean
   | null
-  | { [key: string]: Json }
+  | { [key: string]: Json | undefined }
   | Json[]
 
 export interface Database {
@@ -15,6 +15,7 @@ export interface Database {
           created_at: string
           description: string
           id: number
+          published: boolean
           title: string
         }
         Insert: {
@@ -22,6 +23,7 @@ export interface Database {
           created_at?: string
           description: string
           id?: number
+          published?: boolean
           title: string
         }
         Update: {
@@ -29,8 +31,10 @@ export interface Database {
           created_at?: string
           description?: string
           id?: number
+          published?: boolean
           title?: string
         }
+        Relationships: []
       }
     }
     Views: {

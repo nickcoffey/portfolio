@@ -7,7 +7,7 @@ import type { Post } from '@/supabase/utils'
 type PostParams = { id: string }
 
 export const getStaticPaths: GetStaticPaths<PostParams> = async () => {
-  const { data, error } = await supabase.from('posts').select('id')
+  const { data, error } = await supabase.from('posts').select('id').eq('published', true)
   if (error) {
     console.error(error)
   }

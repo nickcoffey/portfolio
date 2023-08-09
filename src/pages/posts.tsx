@@ -5,7 +5,7 @@ import type { InferGetStaticPropsType, GetStaticProps } from 'next'
 import type { Post } from '@/supabase/utils'
 
 export const getStaticProps: GetStaticProps<{ posts: Post[] | null }> = async () => {
-  const { data, error } = await supabase.from('posts').select().order('id', { ascending: false })
+  const { data, error } = await supabase.from('posts').select().eq('published', true).order('id', { ascending: false })
   if (error) {
     console.error(error)
   }
