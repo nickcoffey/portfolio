@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps<PostProps, PostParams> = async conte
   if (error) {
     console.error(error)
   }
-  return { props: { post: data && data[0] } }
+  return { props: { post: data && data[0] }, revalidate: 10 }
 }
 
 export default function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {

@@ -10,7 +10,7 @@ export const getStaticProps: GetStaticProps<{ posts: Post[] | null }> = async ()
     console.error(error)
   }
 
-  return { props: { posts: data } }
+  return { props: { posts: data }, revalidate: 10 }
 }
 
 export default function Posts({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
