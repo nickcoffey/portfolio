@@ -1,58 +1,19 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core'
-import { faDev, faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useContext } from 'react'
-import styled, { css } from 'styled-components'
-import { ThemeContext } from '..'
-import { largeScreenMixin } from '../styles'
-import { Link } from './general'
+import Link from 'next/link';
+import { ROUTES } from '@/consts'
 
-const LargeFooterStyles = css`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const currentYear = new Date().getFullYear()
 
-  .footer-icons {
-    margin-left: 1rem;
-  }
-`
-const StyledFooter = styled.footer<{ color: string; textColor: string }>`
-  text-align: center;
-  padding: 0.5rem 0;
-  background-color: ${({ color }) => color};
-  color: ${({ textColor }) => textColor};
-  font-size: 0.85rem;
-
-  .footer-icons {
-    a {
-      margin-right: 1.25rem;
-      font-size: 1.75rem;
-      :last-of-type {
-        margin-right: 0;
-      }
-    }
-  }
-
-  ${largeScreenMixin(LargeFooterStyles)}
-`
-
-export default function Footer() {
-  const { darkText, surfaceColor, primaryColor } = useContext(ThemeContext)
-
-  const SocialLink = ({ link, icon }: { link: string; icon: IconProp }) => (
-    <Link href={`https://www.${link}`} color={surfaceColor} hoverColor={primaryColor}>
-      <FontAwesomeIcon icon={icon} />
-    </Link>
-  )
-
+export function Footer() {
   return (
-    <StyledFooter color={darkText} textColor={surfaceColor}>
-      Designed by Nick Coffey
-      <div className='footer-icons'>
-        <SocialLink link='linkedin.com/in/nicholasjcoffey' icon={faLinkedin} />
-        <SocialLink link='github.com/nickcoffey' icon={faGithubSquare} />
-        <SocialLink link='dev.to/nickcoffey' icon={faDev} />
-      </div>
-    </StyledFooter>
+    <footer className='flex flex-col gap-6 py-6 mt-12 text-sm border-t border-gray-200'>
+      <nav className='flex gap-10 justify-center'>
+        {ROUTES.map(({ link, name }, index) => (
+          <Link href={link} key={index}>{name}</Link>
+        ))}
+      </nav>
+      <p className='text-gray-400 font-light text-center'>
+        &copy; {currentYear} Nick Coffey. All rights reserved.
+      </p>
+    </footer>
   )
 }
