@@ -10,7 +10,13 @@ type MarkdownProps = {
 export function Markdown({ content }: MarkdownProps) {
   const [markdown, setMarkdown] = useRemark({
     // @ts-ignore
-    rehypePlugins: [rehypeSlug, rehypePrism]
+    rehypePlugins: [rehypeSlug, rehypePrism],
+    rehypeReactOptions: {
+      components: {
+        // @ts-ignore
+        a: (props) => <a target='_blank' {...props} />
+      }
+    }
   })
 
   useEffect(() => {

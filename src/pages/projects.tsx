@@ -29,7 +29,7 @@ export default function Projects() {
         <h1 className='font-bold text-4xl'>Projects</h1>
         {projects.map(({ id, title, createdAt, description, link }) => (
           <section key={id}>
-            <Link href={link}>
+            <Link href={link} target='_blank'>
               <div className='flex flex-col gap-2 group'>
                 <h2 className='font-bold text-2xl group-hover:underline'>{title}</h2>
                 <p className='text-gray-400'>{getFormattedDate(createdAt)}</p>
