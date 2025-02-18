@@ -1,4 +1,4 @@
-import { FaLinkedinIn, FaGithub, FaRegEnvelope } from 'react-icons/fa'
+import { FaLinkedinIn, FaGithub, FaRegEnvelope, FaCoffee } from 'react-icons/fa'
 import type { IconType } from 'react-icons'
 
 type Route = {
@@ -20,5 +20,6 @@ type Contact = {
 export const CONTACTS: Contact[] = [
   { text: 'Follow on GitHub', link: 'https://github.com/nickcoffey', Icon: FaGithub },
   { text: 'Follow on LinkedIn', link: 'https://www.linkedin.com/in/nicholasjcoffey', Icon: FaLinkedinIn },
-  { text: 'nicholasjcoffey@gmail.com', link: 'mailto:nicholasjcoffey@gmail.com', Icon: FaRegEnvelope }
+  { text: 'nicholasjcoffey@gmail.com', link: 'mailto:nicholasjcoffey@gmail.com', Icon: FaRegEnvelope },
+  { text: 'Buy me a coffee', link: 'https://buymeacoffee.com/nickcoffey', Icon: FaCoffee }
 ]
