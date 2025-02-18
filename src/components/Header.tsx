@@ -14,7 +14,7 @@ export function Header() {
       <Link href='/' className='bg-black p-1 rounded-full text-white dark:bg-slate-700'>NC</Link>
       <nav className='gap-8 hidden md:flex'>
         {ROUTES.map(({ link, name }, index) => (
-          <Link href={link} key={index}>
+          <Link href={link} key={index} className='hover:underline'>
             {name}
           </Link>
         ))}

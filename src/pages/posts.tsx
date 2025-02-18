@@ -25,8 +25,8 @@ export default function Posts({ posts }: InferGetStaticPropsType<typeof getStati
         {posts?.map(({ id, title, created_at, description }) => (
           <section key={id}>
             <Link href={`/posts/${id}`}>
-              <div className='flex flex-col gap-2'>
-                <h2 className='font-bold text-2xl'>{title}</h2>
+              <div className='flex flex-col gap-2 group'>
+                <h2 className='font-bold text-2xl group-hover:underline'>{title}</h2>
                 <p className='text-gray-400'>{getFormattedDate(created_at)}</p>
                 <p className='text-gray-400'>{description}</p>
               </div>

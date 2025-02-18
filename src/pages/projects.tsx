@@ -30,8 +30,8 @@ export default function Projects() {
         {projects.map(({ id, title, createdAt, description, link }) => (
           <section key={id}>
             <Link href={link}>
-              <div className='flex flex-col gap-2'>
-                <h2 className='font-bold text-2xl'>{title}</h2>
+              <div className='flex flex-col gap-2 group'>
+                <h2 className='font-bold text-2xl group-hover:underline'>{title}</h2>
                 <p className='text-gray-400'>{getFormattedDate(createdAt)}</p>
                 <p className='text-gray-400'>{description}</p>
               </div>

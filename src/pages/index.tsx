@@ -24,7 +24,7 @@ export default function Home() {
           {CONTACTS.map(({ link, text, Icon }, index) => (
             <li className='flex items-center gap-4' key={index}>
               <Icon className='text-lg text-gray-400' />
-              <a href={link}>{text}</a>
+              <a href={link} className='hover:underline'>{text}</a>
             </li>
           ))}
         </ul>
